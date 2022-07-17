@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450DB48C28845DB600C4FAFE /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 450DB48B28845DB600C4FAFE /* Inject */; };
 		45463162288087FD0044F49E /* bookLibraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45463161288087FD0044F49E /* bookLibraryApp.swift */; };
 		45463164288087FD0044F49E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45463163288087FD0044F49E /* ContentView.swift */; };
 		45463166288087FF0044F49E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45463165288087FF0044F49E /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450DB48C28845DB600C4FAFE /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = bookLibrary;
+			packageProductDependencies = (
+				450DB48B28845DB600C4FAFE /* Inject */,
+			);
 			productName = bookLibrary;
 			productReference = 4546315E288087FD0044F49E /* bookLibrary.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 45463155288087FD0044F49E;
+			packageReferences = (
+				450DB48A28845DB600C4FAFE /* XCRemoteSwiftPackageReference "Inject" */,
+			);
 			productRefGroup = 4546315F288087FD0044F49E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -429,6 +437,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = mustafaOzturk.bookLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -577,6 +589,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		450DB48A28845DB600C4FAFE /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		450DB48B28845DB600C4FAFE /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 450DB48A28845DB600C4FAFE /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 45463156288087FD0044F49E /* Project object */;
 }
